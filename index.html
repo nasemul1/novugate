@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuvogate</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div><a href="#"><img class="logo" src="./assets/logo.png" alt=""></a></div>
+                <a href="responsiveNav.html" class="toggle-btn">&#9776;</a>
+                <div class="nav-links-container">
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Calculator</a></li>
+                </div>
+                <div>  <button class="nav-btn" onClick="pop1()">Start Security Today</button></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- <div> -->
+        <div id="multi-step-form-container">
+            <div>
+                <div></div>
+                <h2>Let's Start</h2>
+                <button onclick="popClose()">X</button>
+            </div>
+            <form
+                  id="userAccountSetupForm"
+                  name="userAccountSetupForm"
+                  enctype="multipart/form-data"
+                  method="POST"
+                >
+                  <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                    <!-- Step 1 -->
+                    <li
+                      class="form-stepper-active text-center form-stepper-list"
+                      step="1"
+                    >
+                      <a class="mx-2">
+                        <span class="form-stepper-circle">
+                          <span>1</span>
+                        </span>
+                        <div class="label">Home Pack</div>
+                      </a>
+                    </li>
+                    <!-- Step 2 -->
+                    <li
+                      class="form-stepper-unfinished text-center form-stepper-list"
+                      step="2"
+                    >
+                      <a class="mx-2">
+                        <span class="form-stepper-circle text-muted">
+                          <span>2</span>
+                        </span>
+                        <div class="label text-muted">Residence/Doors & Windows</div>
+                      </a>
+                    </li>
+                    <!-- Step 3 -->
+                    <li
+                      class="form-stepper-unfinished text-center form-stepper-list"
+                      step="3"
+                    >
+                      <a class="mx-2">
+                        <span class="form-stepper-circle text-muted">
+                          <span>3</span>
+                        </span>
+                        <div class="label text-muted">Finalize</div>
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- Step 1 Content -->
+                  <section id="step-1" class="form-step">
+                    <!-- Step 1 input fields -->
+                      <div id="q-card-container">
+                        <div class="q-card">
+                            <h3>HOME SECURITY SYSTEM</h3>
+                            <img src="./assets/card1.png" alt="image">
+                            <p>The Starter Home Security System is a great way to start your home security journey.</p>
+                            <input type="radio" name="home-pack" value="home-security">
+                        </div>
+                        <div class="q-card">
+                            <h3>SMART HOME SYSTEM</h3>
+                            <img src="./assets/card2.png" alt="image">
+                            <p>If you're looking for the next level in home protection, this  is the perfect match for you.</p>
+                            <input type="radio" name="home-pack" value="home-security">
+                        </div>
+                        <div class="q-card">
+                            <h3>SECURITY & SMART HOME SYSTEM</h3>
+                            <img src="./assets/card1.png" alt="image">
+                            <p>You will have full control with the Ultimate Home Security System.</p>
+                            <input type="radio" name="home-pack" value="home-security">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                      <button
+                        class="button btn-navigate-form-step"
+                        type="button"
+                        step_number="2"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </section>
+                  <!-- Step 2 Content, default hidden on page load. -->
+                  <section id="step-2" class="form-step d-none">
+                    <h2 class="font-normal">Social Profiles</h2>
+                    <!-- Step 2 input fields -->
+                    <div id="win-container">
+                      <div id="residence-type">
+                          <div><span>Residence Type</span><span>Choose One</span></div>
+                          <label for="signle-family"><input type="radio" id="signle-family" name="residence-type" value="signle-family">Signle family</label>
+                          <label for="town-home"><input type="radio" id="town-home" name="residence-type" value="town-home">Town home</label>
+                          <label for="condo"><input type="radio" id="condo" name="residence-type" value="condo">Condo</label>
+                          <label for="apartment"><input type="radio" id="apartment" name="residence-type" value="apartment">Apartment</label>
+                          <label for="trailer"><input type="radio" id="trailer" name="residence-type" value="home-security">Trailer</label>
+                          <label for="other"><input type="radio" id="other" name="residence-type" value="other">other</label>
+                      </div>
+                      <div id="doors-window">
+                          <div><span>Doors & Windows</span><span>Choose One</span></div>
+                          <label for="entry">Entry doors <input type="number" name="doors-window" id="entry"></label>
+                          <label for="garage">Garage doors <input type="number" name="doors-window" id="garage"></label>
+                          <label for="window">Windows <input type="number" name="doors-window" id="window"></label>
+                      </div>
+                  </div>
+                    <div class="mt-3">
+                      <button
+                        class="button btn-navigate-form-step"
+                        type="button"
+                        step_number="1"
+                      >
+                        Prev
+                      </button>
+                      <button
+                        class="button btn-navigate-form-step"
+                        type="button"
+                        step_number="3"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </section>
+                  <!-- Step 3 Content, default hidden on page load. -->
+                  <section id="step-3" class="form-step d-none">
+                    <div id="quo-container">
+                        <h3>Get a free quote</h3>
+                        <p>Ready to turn your home into a smart home? Call now to get started or fill out the form.</p>
+                        <input type="text" name="name" placeholder="First Name and Last Name">
+                        <input type="text" name="phone" placeholder="Phone">
+                        <input type="email" name="email" placeholder="Email">
+                        <p>Clicking the button below constitutes your electronic signature and consent for Vivint and its parent company NRG to use
+                            automated technology, including calls, texts and prerecorded messages, to contact you at the number provided about Vivint
+                            and NRG offers. Consent not required to make a purchase. Up to 10msg/month. Reply 'STOP' to opt-out. See Terms of Service
+                            and Privacy Policy.</p>
+                    </div>
+                    <button
+                        class="button btn-navigate-form-step"
+                        type="button"
+                        step_number="2"
+                      >
+                        Prev
+                    </button>
+                    <button class="button submit-btn" type="submit">Start Quote</button>
+                  </section>
+            </form>
+        </div>
+        <!-- </div> -->
+       <!-- this is banner -->
+        <section class="banner">
+            <div class="banner-content">
+                <h1>Your home is unique. <br>
+                     Get a security <br>
+                      system to match</h1>
+                <p>Your home is unique; your smart security system should be too.</p>
+                <button>Complete quiz</button>
+            </div>
+        </section>
+
+        <!-- section card -->
+        <section id="card-section">
+            <p>Driven to protect</p>
+            <h2>Everything you need to <br> keep safe.</h2>
+            <div id="card-container">
+                <div class="card">
+                    <div><h3>HOME SECURITY SYSTEM</h3></div>
+                    <img src="./assets/card1.png" alt="image">
+                    <p>The Starter Home Security System is a great way to start your home security journey.</p>
+                    <button>&#8594;</button>
+                </div>
+                <div class="card">
+                    <div><h3>SMART HOME SYSTEM</h3></div>
+                    <img src="./assets/card2.png" alt="image">
+                    <p>If you're looking for the next level in home protection, this  is the perfect match for you.</p>
+                    <button>&#8594;</button>
+                </div>
+                <div class="card">
+                    <div><h3>SECURITY & SMART HOME SYSTEM</h3></div>
+                    <img src="./assets/card1.png" alt="image">
+                    <p>You will have full control with the Ultimate Home Security System.</p>
+                    <button>&#8594;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- search section -->
+        <section id="form-section">
+            <h2>See Security Options Unique to <br> Your Home.</h2>
+            <form class="container">
+                <div class="dropdown">
+                    <label for="interest"><span class="label-f">INTERSTED IN</span><span>Choose One</span></label>
+                    <div class="dropdown-content">
+                        <label>
+                            <input type="radio" name="interest" value="home_security">
+                            Home Security
+                        </label>
+                        <label>
+                            <input type="radio" name="interest" value="smart_home_automation" checked>
+                            Smart Home Automation
+                        </label>
+                        <label>
+                            <input type="radio" name="interest" value="both">
+                            Both
+                        </label>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <label for="residence"><span class="label-f">RESIDENCE TYPE</span><span>Choose One</span></label>
+                    <div class="dropdown-content">
+                        <label>
+                            <input type="radio" name="residence" value="apartment">
+                            Apartment
+                        </label>
+                        <label>
+                            <input type="radio" name="residence" value="house">
+                            House
+                        </label>
+                        <label>
+                            <input type="radio" name="residence" value="condo">
+                            Condo
+                        </label>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <label for="doors_windows"><span class="label-f">DOORS & WINDOWS</span><span>Choose One</span></label>
+                    <div class="dropdown-content">
+                        <label>
+                            <input type="radio" name="doors_windows" value="yes">
+                            Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="doors_windows" value="no">
+                            No
+                        </label>
+                        <label>
+                            <input type="radio" name="doors_windows" value="not_sure">
+                            Not Sure
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="finalize-btn" onclick="showPopup()">Finalize</button>
+            </form>
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <button class="close-btn" onclick="closePopup()">x</button>
+                    <input type="text" placeholder="First and Last Name">
+                    <input type="text" placeholder="Phone">
+                    <input type="email" placeholder="Email">
+                    <div>
+                        <p>Clicking the button below constitutes your electronic signature and consent for Vivint and its parent company NRG to use automated technology, including calls, texts and prerecorded messages, to contact you at the number provided about Vivint and NRG offers. Consent not required to make a purchase. Up to 10msg/month. Reply "STOP" to opt-out. See Terms of Service and Privacy Policy.</p>
+                        <button type="button" class="request-quote-btn">Request A Quote</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- feature section -->
+        <section id="feature-section">
+            <div id="feature-container">
+                <div id="left">
+                    <h2>Part of a complete system</h2>
+                    <img id="pImage" src="./assets/s-l160021.png" alt="camera">
+                </div>
+                <div id="right">
+                    <div id="corusal">
+                        <button>&larr;</button>
+                        <div>
+                            <img src="./assets/New-Folder/1.png" onclick="img('./assets/New-Folder/11.png', 1)" alt="image">
+                            <img src="./assets/New-Folder/2.png" onclick="img('./assets/New-Folder/22.png', 2)" alt="image">
+                            <img src="./assets/New-Folder/3.png" onclick="img('./assets/New-Folder/33.png', 3)" alt="image">
+                            <img src="./assets/New-Folder/4.png" onclick="img('./assets/New-Folder/44.png', 4)" alt="image">
+                            <img src="./assets/New-Folder/5.png" onclick="img('./assets/New-Folder/55.png', 5)" alt="image">
+                            <img src="./assets/New-Folder/6.png" onclick="img('./assets/New-Folder/66.png', 6)" alt="image">
+                        </div>
+                        <button>&#8594;</button>
+                    </div>
+                    <div id="right-text">
+                        <h3 id="rhead">Outdoor Camera Pro</h3>
+                        <p id="rP">With Smart Sentry™ AI, it's smarter exterior <br> protection. <br><br>
+                        <span>Identifies and deters true threats.</span><br>
+                        <span>Doesn't record crime; it helps prevent it.</span><br>
+                        <span>Provides live and recorded video.</span></p>
+                        <button>Start your quote &#8594;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <!-- <div class="comparison-title">The Nuvogate Smart Home<sup>®</sup> difference</div>
+                    <div class="comparison-column">
+                        <div class="comparison-brand"><img src="/assets/logo.png" alt=""></div>
+                    </div>
+                    <div class="comparison-column">
+                        <div class="comparison-brand">Others</div>
+                    </div> -->
+                        <div class="comparison-feature comparison-title"><h1>The Nuvogate Smart Home<sup>®</sup> difference</h1></div>
+                        <div class="comparison-check "><div class="comparison-brand no-bac"><img src="/assets/logo.png" alt=""></div></div>
+                        <div class="comparison-check"><div class="comparison-brand no-bac">Others</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Whole home protection</div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Mobile app control & smart home integration</div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Up to 24-hour battery backup, Wi-Fi and cellular connection</div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">24/7 professional monitoring for less than $1/day</div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div class="crs">x</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Agents can see and speak to intruders via indoor camera<sup>*</sup></div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div class="crs">x</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Integrated privacy shutter on all indoor cameras</div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div class="crs">x</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Lifetime warranty and 10% discount on hardware for subscribers<sup>*</sup></div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div class="crs">x</div></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">No contracts or hidden fees. Cancel anytime.</div>
+                    <div class="comparison-check"><div>&#10003;</div></div>
+                    <div class="comparison-check"><div class="crs">x</div></div>
+                </div>
+                <div class="comparison-note">
+                    <sup>*</sup> Requires Fast Protect<sup>TM</sup> Monitoring plan and Smart Alarm<sup>TM</sup> Indoor Wireless Camera.
+                </div>
+            </div>
+        </section>
+
+        <!-- banner-2 -->
+        <section id="second-banner">
+            <div id="sec-ban-text">
+                <div id="text-img">
+                    <img src="./assets/logo.png" alt="logo image">
+                </div>
+                <h2>One app to <br> protect it all.</h2>
+                <p>An easy to use interface manages all your Arlo products and keeps you connected to your home and your family's safety from wherever you are.</p>
+                <div>
+                    <div><button>1</button> Access 24/7 Emergency Response</div>
+                    <div><button>2</button> Get alerts and quickly take action</div>
+                    <div><button>3</button> See event details from anywhere</div>
+                    <div><button>4</button> Manage your security your way</div>
+                </div>
+            </div>
+            <div id="sec-ban-img">
+                <img src="./assets/Group3275.png" alt="">
+            </div>
+        </section>
+        <!-- quote section -->
+        <section id="quote-section">
+                <div id="q-container">
+                    <h2>Get a free quote</h2>
+                    <p>Ready to turn your home into a smart home? Call now to get started or fill out the form.</p>
+                    <form action="">
+                        <div id="q-input">
+                            <input type="text" placeholder="First and Last Name">
+                            <input type="text" placeholder="Phone">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div id="des">
+                            <p>Clicking the button below constitutes your electronic signature and consent for Vivint and its parent company NRG to use automated technology, including calls, texts and prerecorded messages, to contact you at the number provided about Vivint and NRG offers. Consent not required to make a purchase. Up to 10msg/month. Reply "STOP" to opt-out. See Terms of Service and Privacy Policy.</p>
+                            <button type="button" class="request-quote-btn">Start A Quote</button>
+                        </div>
+                    </form>
+                </div>
+        </section>
+        <!-- comment section -->
+        <section id="comment-section">
+            <div id="comment-container">
+                <div class="comment">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="sg">SG</p>
+                    <p id="c-date">Apr 24, 2024</p>
+                    <p id="c-text-head"><strong>Equipment worked as expected and any…</strong></p>
+                    <p>Equipment worked as expected and any updates were easy to implement. Customer support is great…</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="comment">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="sg">SG</p>
+                    <p id="c-date">Apr 24, 2024</p>
+                    <p id="c-text-head"><strong>Equipment worked as expected and any…</strong></p>
+                    <p>Equipment worked as expected and any updates were easy to implement. Customer support is great…</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="comment">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="sg">SG</p>
+                    <p id="c-date">Apr 24, 2024</p>
+                    <p id="c-text-head"><strong>Equipment worked as expected and any…</strong></p>
+                    <p>Equipment worked as expected and any updates were easy to implement. Customer support is great…</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="comment">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="sg">SG</p>
+                    <p id="c-date">Apr 24, 2024</p>
+                    <p id="c-text-head"><strong>Equipment worked as expected and any…</strong></p>
+                    <p>Equipment worked as expected and any updates were easy to implement. Customer support is great…</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+        </section>
+        <!-- test section -->
+    </main>
+    <footer>
+        <div>
+            <img src="./assets/logo.png" alt="image">
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Term of Service</a>
+            </div>
+        </div>
+        <p>Copyright © 2024 Nuvogate Smart Home, Inc. All rights reserved. Do not sell or share my personal information. Limit the use of my sensitive personal information</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
